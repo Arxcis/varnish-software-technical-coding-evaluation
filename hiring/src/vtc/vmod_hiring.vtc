@@ -23,6 +23,11 @@ varnish v1 -vcl+backend {
 	}
 } -start
 
+logexpect l1 -v v1 -g raw -d 1 {
+	expect 0 0    CLI     {^Rd vcl.load}
+	expect 0 =    VCL_Log {^vmod_hiring loaded at }
+} -start
+
 client c1 {
 	txreq
 	rxresp
@@ -34,3 +39,6 @@ client c1 {
 	expect resp.http.CountHello == 0
 	expect resp.http.CountEmpty == 0
 } -run
+
+
+client c1 -run

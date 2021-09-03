@@ -19,6 +19,7 @@ Example
 
 XXX: define vmod-hiring interface
 
+$Event event_function
 $Function STRING hello()
 
 Description
