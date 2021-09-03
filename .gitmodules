@@ -1,0 +1,3 @@
+[submodule "vcdk"]
+	path = vcdk
+	url = git@github.com:Dridi/vcdk.git
