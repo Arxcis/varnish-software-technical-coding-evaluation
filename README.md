@@ -1,3 +1,14 @@
+# Setup development environment
+
+```sh
+apt install\ 
+    libvarnishapi-dev\
+    libtool\ 
+    m4\ 
+    automake\
+    autotools-dev;
+```
+
 # Varnish​ ​Software​ ​Techni​cal​ ​Coding​ ​Evaluation​ ​(C,​ ​VCL) 
 
 Write​ ​a​ ​VMOD​ ​called​ ​​hiring​​ ​which​ ​has​ ​a​ ​function: 
