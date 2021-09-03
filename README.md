@@ -1,12 +1,27 @@
-# Setup development environment
+# Command LOG
 
 ```sh
+# 1. Install deps
 apt install\ 
     libvarnishapi-dev\
     libtool\ 
     m4\ 
     automake\
     autotools-dev;
+
+# 2. Install varnish cache development kit - vcdk
+git submodule update --init
+cd vcdk
+./bootstrap
+make
+sudo make install
+cd ..
+
+# 3. Generate boilerplate varnish mod-project using vcdk
+vcdk autotools --vmod=playground playground
+cd playground/
+./bootstrap
+make
 ```
 
 # Varnish​ ​Software​ ​Techni​cal​ ​Coding​ ​Evaluation​ ​(C,​ ​VCL) 
