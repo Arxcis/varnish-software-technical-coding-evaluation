@@ -17,9 +17,9 @@ make
 sudo make install
 cd ..
 
-# 3. Generate boilerplate varnish mod-project using vcdk
-vcdk autotools --vmod=playground playground
-cd playground/
+# 3. Generate varnish mod named 'hiring' using vcdk
+vcdk autotools --vmod=hiring hiring
+cd hiring/
 ./bootstrap
 make
 ```
