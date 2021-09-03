@@ -1,4 +1,4 @@
-# Command LOG
+# Log
 
 ```sh
 # 1. Install deps
