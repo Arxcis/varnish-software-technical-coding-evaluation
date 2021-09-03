@@ -33,7 +33,7 @@ Description
 $Function INT count(STRING haystack, STRING needle)
 
 Description
-    Takes a haystack and a needle.
+    Counts the needles in the haystack.
 
 
 SEE ALSO
