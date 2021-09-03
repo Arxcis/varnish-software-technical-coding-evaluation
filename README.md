@@ -1,28 +1,3 @@
-# Log
-
-```sh
-# 1. Install deps
-apt install\ 
-    libvarnishapi-dev\
-    libtool\ 
-    m4\ 
-    automake\
-    autotools-dev;
-
-# 2. Install varnish cache development kit - vcdk
-git submodule update --init
-cd vcdk
-./bootstrap
-make
-sudo make install
-cd ..
-
-# 3. Generate varnish mod named 'hiring' using vcdk
-vcdk autotools --vmod=hiring hiring
-cd hiring/
-./bootstrap
-make
-```
 
 # Varnish​ ​Software​ ​Techni​cal​ ​Coding​ ​Evaluation​ ​(C,​ ​VCL) 
 
@@ -45,3 +20,38 @@ The​ ​VMOD​ ​must:
 * Have​ ​at​ ​least​ ​1​ ​VTC​ ​(test​ ​case)​ ​which​ ​passes​ ​all​ ​the​ ​above​ ​examples​ ​as​ ​tests 
  
 Please​ ​see​ ​​https://github.com/varnishcache/libvmod-example​.
+
+# Log
+
+```sh
+# 1. Install deps
+apt install\
+    varnish\
+    libvarnishapi-dev\
+    libtool\ 
+    m4\ 
+    automake\
+    autotools-dev;
+
+# 2. Build and install varnish cache development kit - vcdk
+git submodule update --init
+cd vcdk
+./bootstrap
+make
+sudo make install
+cd ..
+
+# 3. Generate varnish mod named 'hiring' using vcdk
+vcdk autotools --vmod=hiring hiring
+cd hiring/
+./bootstrap
+make
+make -s check
+
+# 4. Update the 3 following files to add the 'hiring.count()' function
+./hiring/src/vmod_hiring.c
+./hiring/src/vmod_hiring.vcc
+./hiring/src/vtc/vmod_hiring.vtc
+```
+
+Thanks to https://github.com/varnishcache/libvmod-example/tree/master/src :pray:

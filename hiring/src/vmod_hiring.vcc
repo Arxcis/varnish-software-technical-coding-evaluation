@@ -24,6 +24,18 @@ $Function STRING hello()
 Description
     Hello world for vmod-hiring
 
+
+$Function STRING info()
+
+Description
+    Print info from ctx
+
+$Function INT count(STRING haystack, STRING needle)
+
+Description
+    Counts the needles in the haystack.
+
+
 SEE ALSO
 ========
 

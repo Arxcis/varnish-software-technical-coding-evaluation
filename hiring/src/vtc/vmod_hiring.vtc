@@ -6,11 +6,21 @@ server s1 {
 } -start
 
 varnish v1 -vcl+backend {
-        import hiring;
+	import std;
+	import hiring;
 
-        sub vcl_deliver {
-	    set resp.http.Hello = hiring.hello();
-        }
+	sub vcl_init {
+		std.log(hiring.info());
+	}
+
+	sub vcl_deliver {
+		set resp.http.Hello = hiring.hello();
+		
+		set resp.http.CountTest = hiring.count("test","t");
+		set resp.http.CountMississippi = hiring.count("mississippi","iss"); 
+		set resp.http.CountHello = hiring.count("hello","x");
+		set resp.http.CountEmpty = hiring.count("","");
+	}
 } -start
 
 client c1 {
@@ -18,4 +28,9 @@ client c1 {
 	rxresp
 	expect resp.status == 200
 	expect resp.http.Hello == "vmod-hiring"
+	
+	expect resp.http.CountTest == 2
+	expect resp.http.CountMississippi == 2
+	expect resp.http.CountHello == 0
+	expect resp.http.CountEmpty == 0
 } -run
