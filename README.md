@@ -16,7 +16,7 @@ hiring.count("",​ ​"") =>​ ​0
 
 The​ ​VMOD​ ​must: 
  
-- [ ] Log​ ​the​ ​parameters​ ​and​ ​result​ ​to​ ​the​ ​VSL​ ​(varnishlog) 
+- [x] Log​ ​the​ ​parameters​ ​and​ ​result​ ​to​ ​the​ ​VSL​ ​(varnishlog) 
 - [x] Have​ ​at​ ​least​ ​1​ ​VTC​ ​(test​ ​case)​ ​which​ ​passes​ ​all​ ​the​ ​above​ ​examples​ ​as​ ​tests 
  
 Please​ ​see​ ​​https://github.com/varnishcache/libvmod-example​.
