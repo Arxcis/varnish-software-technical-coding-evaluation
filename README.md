@@ -2,7 +2,8 @@
 
 ```sh
 # 1. Install deps
-apt install\ 
+apt install\
+    varnish\
     libvarnishapi-dev\
     libtool\ 
     m4\ 
